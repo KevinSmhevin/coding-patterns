@@ -107,6 +107,26 @@ adjacency list are implemented using dictionaries/hash tables
         if vertex in vertices:
           neighbors.remove(vertex)
 
+    def add_edges(self, vertex1, vertex2):
+      self.adjacency_list[vertex1].append(vertex2)
+      self.adjacency_list[vertex2].append(vertex1)
+
+    def get_vertices(self):
+      return list(self.adjacency_list.keys())
+
+    def get_neighbors(self, vertex):
+      return self.adjacency_list[vertex]
+
+    def is_adjacent(self, vertex1, vertex2):
+      return vertex2 in self.adjacency_list[vertex1]
+
+    def get_vertex_count(self):
+      return len(self.adjacency_list)
+
+    def get_edge_count(self):
+      count = sum(len(neighbors) for neighbors in self.adjacency_list.values())
+      return count // 2
+
 
 ```
 
