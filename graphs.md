@@ -56,8 +56,10 @@ matrixes are implemented using nested list
               [1, 0, 1, 0]]
 ```
 
-##### adjancency list example 
-adjacency list are implemented using dictionaries
+
+##### adjacency list example 
+
+adjacency list are implemented using dictionaries/hash tables
   *  the keys should represent the vertices
   *  the values should be a list or set with the elements being the connected vertices(representing edges)
 
@@ -80,3 +82,31 @@ adjacency list are implemented using dictionaries
     }
 
 ```
+
+##### complete implementation of an abstract adjacency list 
+
+```python
+
+  from collections import defaultdict
+
+  class Graph:
+    def __init__(self):
+      self.adjacency_list = defaultdict(list)
+
+    def add_vertex(self, vertex):
+      if vertex not in self.adjacency_list:
+        self.adjacency_list[vertex] = []
+
+    def remove_vertex(self, vertex):
+      if vertex not in self.adjacency_list:
+        return
+
+      del self.adjacency_list[vertex]
+
+      for vertices in self.adjacency_list.values():
+        if vertex in vertices:
+          neighbors.remove(vertex)
+
+
+```
+
