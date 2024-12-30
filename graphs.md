@@ -44,10 +44,39 @@ graphs can be represented in either an **adjacency list** or **adjacency matrix*
 
 ##### python code of bidirectional matrix 
 
+matrixes are implemented using nested list
+  * 0 represents no edge
+  * 1 represents an edge(connection)
+
 ```python
 
     matrix = [[0, 1, 0, 1],
               [1, 0, 1, 0],
               [0, 1, 0, 1],
               [1, 0, 1, 0]]
+```
+
+##### adjancency list example 
+adjacency list are implemented using dictionaries
+  *  the keys should represent the vertices
+  *  the values should be a list or set with the elements being the connected vertices(representing edges)
+
+```python
+
+    #bidirectional
+    adj_list_bi = {
+        "a": [b, d],
+        "b": [a, c],
+        "c": [b, d],
+        "d": [c, a]
+    }
+
+    #directional
+    adj_list_dir = {
+        "a": [b],
+        "b": [c],
+        "c": [d],
+        "d": [a]
+    }
+
 ```
