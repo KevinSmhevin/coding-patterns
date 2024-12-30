@@ -130,3 +130,79 @@ adjacency list are implemented using dictionaries/hash tables
 
 ```
 
+### Traversing Graphs
+  - DFS - Depth First Search
+    -  prioritizes depth
+    -  typically implemented with recursion
+    -  use DFS when you need to search deep. Backtracking, maze and map problems
+    
+  - BFS - Breadth First Search
+    - prioritizes neighbors
+    - typically implemented iteratively with a queue
+    - use BFS when you need to prioritize searching neighboring nodes. Find shortest path
+
+#### DFS traversal implementation
+
+```python
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices  # Number of vertices
+        self.adjacencyList = [[] for _ in range(vertices)]  # Adjacency list
+
+    # Method to add an edge to the graph
+    def addEdge(self, source, destination):
+        self.adjacencyList[source].append(destination)
+        self.adjacencyList[destination].append(source)  # For an undirected graph
+
+    # Method to perform DFS using recursion
+    def DFS(self, startVertex):
+        visited = [False] * self.vertices  # Track visited nodes
+        print("DFS Traversal: ", end="")
+        self.DFSRecursive(startVertex, visited)  # Start DFS from the given vertex
+
+    def DFSRecursive(self, currentVertex, visited):
+        visited[currentVertex] = True  # Mark the current node as visited
+        print(currentVertex, end=" ")  # Process the current node
+
+        # Recur for all unvisited neighbors
+        for neighbor in self.adjacencyList[currentVertex]:
+            if not visited[neighbor]:
+                self.DFSRecursive(neighbor, visited)
+
+
+```
+
+#### BFS traversal implementation
+
+```python
+from collections import defaultdict, deque
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.adj_list = defaultdict(list)
+
+    def add_edge(self, u, v):
+        self.adj_list[u].append(v)
+        self.adj_list[v].append(u)  # For undirected graph
+
+    def BFS(self, start_vertex):
+        visited = [False] * self.V  # To keep track of visited vertices
+        queue = deque()
+
+        visited[start_vertex] = True
+        queue.append(start_vertex)
+
+        while queue:
+            current_vertex = queue.popleft()
+            print(current_vertex, end=" ")
+
+            # Explore adjacent vertices
+            for neighbor in self.adj_list[current_vertex]:
+                if not visited[neighbor]:
+                    visited[neighbor] = True
+                    queue.append(neighbor)
+
+```
+
