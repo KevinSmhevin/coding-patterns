@@ -13,7 +13,7 @@ graphs are data structures that consist of **vertices**(nodes) and **edges** con
 
 graphs can be represented in either an **adjacency list** or **adjacency matrix**. 
 
-##### matrix examples 
+##### graph examples 
 
 ```
 # bidirectional     # directional
