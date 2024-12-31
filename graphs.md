@@ -23,6 +23,8 @@ graphs can be represented in either an **adjacency list** or **adjacency matrix*
                       d <-- c
 ```
 
+##### adjacency matrix examples
+
 ##### bidirectional
 
 |   | a | b | c | d |
@@ -205,6 +207,21 @@ class Graph:
                     queue.append(neighbor)
 
 ```
+
+
+### general approach to solving graph problems
+
+- Figure out approach to traversing the graph/nodes.
+  - Almost all graph problems will be solved via DFS or BFS.
+    - use DFS when you need to search deep, backtrack and map problems
+    - use BFS when you need to search neighboring nodes
+- Decide how we want to store the graph data. (Adjacency List or Matrix)
+  - If the graph has alot of vertices - list might be better
+  - If the graph has alot of edges - matrix might be better
+  - Matrix is easier to tell if vertices have an edge
+  - When in doubt i usually use an adjancency list
+- Keep track of all visited nodes using a set or hashmap 
+
 
 #### Graph leetcode problems
 
