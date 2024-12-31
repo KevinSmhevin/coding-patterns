@@ -205,7 +205,7 @@ class Graph:
                     queue.append(neighbor)
 
 ```
-[Link to another page](./another-page.html).
+
 #### Graph leetcode problems
 
 - [number of provinces](https://leetcode.com/problems/number-of-provinces/description/?envType=problem-list-v2&envId=graph)
