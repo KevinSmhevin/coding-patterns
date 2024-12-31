@@ -25,21 +25,21 @@ graphs can be represented in either an **adjacency list** or **adjacency matrix*
 
 ##### bidirectional
 
-|matrix| a | b | c | d |
-|:-----|:--|:--|:--|:--|
-|a     | 0 | 1 | 0 | 1 |
-|b     | 1 | 0 | 1 | 0 |
-|c     | 0 | 1 | 0 | 1 |
-|d     | 1 | 0 | 1 | 0 |
+|   | a | b | c | d |
+|:--|:--|:--|:--|:--|
+|a  | 0 | 1 | 0 | 1 |
+|b  | 1 | 0 | 1 | 0 |
+|c  | 0 | 1 | 0 | 1 |
+|d  | 1 | 0 | 1 | 0 |
 
 ##### directional
 
-|matrix| a | b | c | d |
-|:-----|:--|:--|:--|:--|
-|a     | 0 | 1 | 0 | 0 |
-|b     | 0 | 0 | 1 | 0 |
-|c     | 0 | 0 | 0 | 1 |
-|d     | 1 | 0 | 0 | 0 |
+|   | a | b | c | d |
+|:--|:--|:--|:--|:--|
+|a  | 0 | 1 | 0 | 0 |
+|b  | 0 | 0 | 1 | 0 |
+|c  | 0 | 0 | 0 | 1 |
+|d  | 1 | 0 | 0 | 0 |
 
 
 ##### python code of bidirectional matrix 
