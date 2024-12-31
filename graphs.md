@@ -14,6 +14,7 @@ graphs are data structures that consist of **vertices**(nodes) and **edges** con
 graphs can be represented in either an **adjacency list** or **adjacency matrix**. 
 
 ##### graph examples 
+![graph-example](/images/graph-one.png)
 
 ```
 # bidirectional     # directional
@@ -22,6 +23,9 @@ graphs can be represented in either an **adjacency list** or **adjacency matrix*
     d -- c            |     V
                       d <-- c
 ```
+
+
+
 
 ##### adjacency matrix examples
 
