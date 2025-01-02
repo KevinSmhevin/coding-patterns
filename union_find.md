@@ -9,9 +9,9 @@ Nodes that are not connected to eachother(directly or indirectly) will therefore
 
 ### Why union find over DFS/BFS
 
-When applicable union find provides near constant time operations for union and find operations (overall `log n` time).
-In contrast BFS/DFS will take `O(V + E)` `v = vertices e = edges`.
-The drawbacks are spaceoverhead to store the parent and rank of each node/vertex and the initial setup to create the union find data structure.
+When applicable union find provides near constant time operations for union and find operations (overall `O log n` time).
+In contrast BFS/DFS will take `O(V + E)` where `v = vertices e = edges` overall `O(n)` linear time.
+The main drawbacks of union find are space overhead to store the parent and rank of each node/vertex and the initial setup to create the union find data structure.
 
 
 ### Union find class properties
