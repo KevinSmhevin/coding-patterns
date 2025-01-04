@@ -1,35 +1,31 @@
-from collections import heapq
+from heapq import *
 
 class MedianFinder:
-    '''
-    small_heap will be a max heap containing all the smaller numbers
-    large_heap will be a min heap containing all the larger numbers
-    '''
     def __init__(self):
-        self.small_heap, self.large_heap = [], []
-        
+        self.smaller_half = [] # max heap
+        self.larger_half = [] # min heap
     
     def add_num(self, num):
-        if not self.small_heap or -self.small_heap[0] >= num:
-            heapq.heappush(self.small_heap, -num)
+        if not self.smaller_half or -self.smaller_half[0] >= num:
+            heappush(self.smaller_half, -num)
         else:
-            heapq.heappush(self.large_heap, num)
+            heappush(self.larger_half, num)
             
         #balance the heaps if needed
         
-        if len(self.small_heap) > len(self.large_heap) + 1:
-            heapq.heappush(self.large_heap, -heapq.heappop(self.small_heap))
+        if len(self.smaller_half) > len(self.larger_half) + 1:
+            heappush(self.larger_half, -heappop(self.smaller_half))
         
-        elif len(self.small_heap) < len(self.large_heap):
-            heapq.heappush(self.small_heap, -heapq.heappop(self.large_heap))
+        elif len(self.smaller_half) < len(self.larger_half):
+            heappush(self.smaller_half, -heappop(self.larger_half))
         
         
     def find_median(self):
         # even number of elements
-        if len(self.small_heap) == len(self.large_heap):
-            return (-self.small_heap[0] + self.large_heap[0]) / 2.0
+        if len(self.smaller_half) == len(self.larger_half):
+            return (-self.smaller_half[0] + self.larger_half[0]) / 2.0
         
         # odd number of elements we know small heap has one more element
         else:
-            return -self.small_heap[0] * 1.0
+            return -self.smaller_half[0] * 1.0
          
