@@ -5,12 +5,13 @@ We'll focus on matrixes typically being represented as graphs and how to approac
 
 ### coordinates of a 4x5 matrix
 
-|   |   |   |   |   |  columns --->
-|:--|:--|:--|:--|:--|  rows
-|0,0|0,1|0,2|0,3|0,4|   |
-|1,0|1,1|1,2|1,3|1,4|   |
-|2,0|2,1|2,2|2,3|2,4|   |
-|3,0|3,1|3,1|3,3|3,4|   V
+|-- |-- |-- |-- |-- |
+|:--|:--|:--|:--|:--|  
+|0,0|0,1|0,2|0,3|0,4|
+|1,0|1,1|1,2|1,3|1,4|
+|2,0|2,1|2,2|2,3|2,4|
+|3,0|3,1|3,1|3,3|3,4|
+
 
 in an m * n matrix we traverse the matrix using 2 loops. 
     - the outer loop represents the current row
