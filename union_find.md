@@ -15,15 +15,42 @@ The main drawbacks of union find are space overhead to store the parent and rank
 
 
 ### Union find class properties
-the 2 arrays are the `parent` array and `rank` array.
+ - the 2 arrays are the `parent` array and `rank` array.
+   - the *parent* array keeps track of the nodes parents
+     - the index represents the node and the value represents its parent
+     - every node/index value is initialized to itself
 
-the *parent* array keeps track of the nodes parents
-the index represents the node and the value represents its parent
-every node/index value is initialized to itself
+   - the *rank* array keeps track of a nodes rank and is used to evaluate which nodes are parents
+     - the index represents the node and the value represents the rank
+     - every node/index value is initialized to the same value(usually 0 or 1)
+    
+```python
+# in a graph with vertices 0 through 4 every vertices parents start as itself
+parent = [0, 1, 2, 3, 4]
 
-the *rank* array keeps track of a nodes rank and is used to evaluate which nodes are parents
-the index represents the node and the value represents the rank
-every node/index value is initialized to the same value(usually 0 or 1)
+# in the graph below:
+# vertex 0 and 1 parent[0], parent[1] is itself
+# vertex 2's parent[2] parent is vertex 1
+# vertex 3's parent[3] parent is vertex 0
+# vertex 4's parent[4] parent is vertex 3
+parent = [0, 1, 1, 0, 3]
+
+# ranks are all initialized to 1, index represents the vertex, value is the rank
+rank = [1, 1, 1, 1, 1]
+
+# with the parents above the ranks array might look like this:
+rank = [3, 2, 1, 2, 1]
+
+# the graphs might look like this
+
+       0         1
+        \         \
+          3         2
+         /
+       4
+
+# the graph has 2 disjointed sets with vertex 0 and 1 being the parent or leader nodes
+```
 
 
 ### Two Core Operations: 
