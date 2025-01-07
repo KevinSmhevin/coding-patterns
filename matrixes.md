@@ -73,3 +73,11 @@ in an m * n matrix we traverse the matrix using 2 loops.
                 dfs(new_row, new_col, matrix, visited, directions)
 
 ```
+
+
+### moving in 8 directions
+
+    - south east    ↘   add (1,1) to current coordinates
+    - north east    ↗   add (-1,1) to current coordinates
+    - south west    ↙   add (-1,-1) to current coordinates
+    - north west    ↖   add (1,-1) to current coordinates
