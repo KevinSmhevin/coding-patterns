@@ -5,12 +5,12 @@ Tries or prefix trees, are tree like data structures that efficiently store stri
 ![trie example](/images/trie_one.png)
 pic example from GeeksforGeeks
 
-Tries/prefix trees core properties and methods: 
+### Tries/prefix trees core properties and methods: 
     - property: `root node` that is a Trienode(explained below)
     - method: `add` that adds strings to the trie 
     - method: `search`  that searchs if a string is in the Trie
 
-Trienodes are the nodes in Tries and have the follow properties:
+### Trienodes are the nodes in Tries and have the follow properties:
     - a children hash map or array to store references to its child nodes.
         - for example in the image above the root node would have the following children object below:
         - `children = {a: TrieNode_A, d: TrieNode_D}`
@@ -22,7 +22,7 @@ Trienodes are the nodes in Tries and have the follow properties:
     
     a prefix can be part of a trie, for example above we can set `an` to be an end of word and set an end of word indicator set to `true`
 
-    ### Trie example
+### Trie example
 
     ```python
 
