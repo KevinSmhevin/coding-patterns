@@ -12,37 +12,59 @@ If you have a problem where you need to check the subtotal values of an array it
 
 ### prefix sum examples
 
-prefix sum and getting the sum between ranges
+##### array prefix sum and getting the sum between ranges
 
 
 ```python
 
-# basic prefix sum of an array
+class PrefixSum:
+    def __init__(self, array):
+        self.prefix_sums = [0] * len(array) # initialize prefix sums
+        running_total = 0
+        
+        for i in range(len(array)):
+            running total += array[i]
+            prefix_sums[i] = running total
 
-array = [1, 5, 10, 15, 20]
+    # get value at index
+    def get_sum(self, index):
+        return self.prefix_sums[index]
 
-prefix_sums = [0] * len(array) # initialize prefix sums
+    # get a sum between range 
+    def get_sum_between_range(self, start, end):
+        if start == 0:
+            return self.prefix_sums[end]
 
-running_total = 0 # running total
-
-for i in range(len(array)): 
-    running total += array[i]
-    prefix_sums[i] = running total
-
-# get value at index
-
-def get_sum(array, prefix_sums, index):
-    return prefix_sums[index]
-
-
-# get a sum between range 
-
-def get_sum_between_range(array, prefix_sums, start, end):
-    if left == 0:
-        return prefix_sums[end]
-
-    else:
-        return prefix_sums[end] - prefix_sums[start - 1]
+        else:
+            return self.prefix_sums[end] - self.prefix_sums[start - 1]
 
 
 ```
+
+
+##### hash map prefix sum examples 
+
+get count subarrays that == k 
+
+example: array = [1, 2, 3, 4, 5] k = 5
+
+```python
+
+def get_subarrays_equal_k(array, k):
+    prefix_sums = {0 : 1}
+    total = 0
+    count = 0
+
+    for i in range(len(array)):
+        total += array[i]
+        
+        if total - k in prefix_sums:
+            count += prefix_sums[total - k]
+
+        prefix_sums[total] = prefix_sums.get(total, 0) + 1
+
+    return count 
+
+```
+
+
