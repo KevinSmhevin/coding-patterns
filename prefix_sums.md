@@ -68,3 +68,31 @@ def get_subarrays_equal_k(array, k):
 ```
 
 
+get longest length of subarrays that == k
+
+example: array = [1, 2, 3, 4, 5] k = 9
+
+```python
+
+def longest_subarray_equal_k(array, k):
+    prefix_sums = {}
+    max_length = 0
+    total = 0
+
+    for i in range(len(array)):
+        total += array[i]
+
+        if total == k:
+            max_length = i + 1
+
+        elif total - k in prefix_sums:
+            max_length = max(max_length, i - prefix_sums[total - k])
+        
+        else:
+            prefix_sums[total] = i
+    
+    return max_length
+
+
+
+```
