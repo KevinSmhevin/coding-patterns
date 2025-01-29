@@ -13,6 +13,11 @@ graphs are data structures that consist of **vertices**(nodes) and **edges** con
 
 graphs can be represented in either an **adjacency list** or **adjacency matrix**. 
 
+### Trees 
+
+  - Trees are a type of graph that do not contain cycles
+  - Trees will always contain N - 1 edges (N = number of nodes)
+
 ##### graph examples 
 ![graph-example](/images/graph-one.png)
 
