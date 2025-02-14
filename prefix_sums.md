@@ -38,15 +38,18 @@ class PrefixSum:
         else:
             return self.prefix_sums[end] - self.prefix_sums[start - 1]
 
-
 ```
 
+##### prefix products
+ - you need to intialize the array values to 1 instead of 0
+ - to get product between ranges it is prefix_product[end] // prefix_product[start -1]
 
 ##### hash map prefix sum examples 
 
-get count subarrays that == k 
+##### get count subarrays that == k 
 
-example: array = [1, 2, 3, 4, 5] k = 5
+strategy:
+ - use a hashmap with `key => total; value => count`
 
 ```python
 
@@ -67,10 +70,22 @@ def get_subarrays_equal_k(array, k):
 
 ```
 
+EX: k = 32
+array = [7, 5, 20, 8, 4, 9]
+ - explanation
+ - From index 1 we will have prefix_sum[12] = 1 
+ - From index 2 we will have prefix_sum[32] = 1
+ - from initializing prefix_sums {0: 1} will run since prefix_sum[32 - 32 (0)] = 1 
+ - From index 4 we will have prefix_sum[44] = 1 so we add to count
+ - prefix_sum[44 - 32 (12)] = 1 so we add that to count
+ - the final count will be 2
 
-get longest length of subarrays that == k
 
-example: array = [1, 2, 3, 4, 5] k = 9
+
+##### get longest length of subarrays that == k
+
+strategy:
+ - user a hashmap with key => total; value => index
 
 ```python
 
@@ -92,7 +107,6 @@ def longest_subarray_equal_k(array, k):
             prefix_sums[total] = i
     
     return max_length
-
 
 
 ```
